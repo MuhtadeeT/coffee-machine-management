@@ -22,7 +22,7 @@ int splash(void)
 
     fclose(fptr);
 
-    sleep(2);
+    sleep(1);
     system("cls");
 
     return 0;

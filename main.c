@@ -3,7 +3,6 @@
 #include "menu.h"
 #include "splash.h"
 #include "login.h"
-#include "menuForCustomer.h"
 
 int main(void)
 {
