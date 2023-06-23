@@ -1,5 +1,26 @@
 # depslib dependency file v1.0
-1682871432 source:c:\c\coffee machine management\main.c
+1687537410 source:c:\c\coffee machine management\main.c
+	<stdio.h>
+	<stdlib.h>
+	"menu.h"
+	"splash.h"
+	"login.h"
+	"menuForCustomer.h"
+
+1687536985 c:\c\coffee machine management\menu.h
+	<stdio.h>
+	<stdlib.h>
+
+1687535772 c:\c\coffee machine management\splash.h
+	<stdio.h>
+	<stdlib.h>
+	<dos.h>
+
+1687537410 c:\c\coffee machine management\login.h
+	<stdio.h>
+	<stdlib.h>
+
+1687537285 c:\c\coffee machine management\menuforcustomer.h
 	<stdio.h>
 	<stdlib.h>
 

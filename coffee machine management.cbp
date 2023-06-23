@@ -31,10 +31,13 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="login.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="menu.h" />
+		<Unit filename="menuForAdmins.h" />
+		<Unit filename="menuForCustomers.h" />
+		<Unit filename="splash.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>
