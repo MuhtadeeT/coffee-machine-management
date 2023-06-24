@@ -17,7 +17,7 @@ int customerMenu(void)
      if(buy != 4)
      {
      printf("\t{] Brew & Chew [}\n\n");
-     printf("\nWhat do you want to buy? [1-4]\n1 - Espresso [$4]\n2 - Latte [$7]\n3 - Cappuccino [$6]\n4 - Exit\n>");
+     printf("\nWhat do you want to buy? [1-4]\n1 - Espresso [$4]\n2 - Latte [$7]\n3 - Cappuccino [$6]\n4 - Exit\n> ");
      scanf("%d", &buy);
     switch (buy) {
       case (1) : {
@@ -122,7 +122,7 @@ int customerMenu(void)
 
 int adminMenu(void)
 {
-    const input;
+    int input;
     int action = 0;
     int water = 400;
     int milk = 540;
@@ -132,7 +132,7 @@ int adminMenu(void)
 
     while (action != 4) {
         printf("\t{] Brew & Chew [}\n\n");
-        printf("\nWrite action [1-4]\n1 - Fill\n2 - Take\n3 - Remaining\n4 - Exit\n>");
+        printf("\nWrite action [1-4]\n1 - Fill\n2 - Take\n3 - Remaining\n4 - Exit\n> ");
         scanf("%d", &input);
         system("cls");
         action = input;

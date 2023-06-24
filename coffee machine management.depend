@@ -6,7 +6,7 @@
 	"splash.h"
 	"login.h"
 
-1687553368 c:\c\coffee machine management\menu.h
+1687598621 c:\c\coffee machine management\menu.h
 	<stdio.h>
 	<stdlib.h>
 	<dos.h>
@@ -16,9 +16,10 @@
 	<stdlib.h>
 	<dos.h>
 
-1687553524 c:\c\coffee machine management\login.h
+1687599751 c:\c\coffee machine management\login.h
 	<stdio.h>
 	<stdlib.h>
+	<string.h>
 	<dos.h>
 
 1687537285 c:\c\coffee machine management\menuforcustomer.h
