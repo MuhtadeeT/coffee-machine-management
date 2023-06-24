@@ -177,7 +177,7 @@ int adminMenu(void)
         action = input;
 
   if (action == 3) {
-    printf("\nThe coffee machine has:\n%d ml of water\n%d ml of milk\n%d g of coffee beans\n%d disposable cups\n%d taka\n", inv1.water, inv1.milk, inv1.beans, inv1.cups, inv1.money);
+    printf("\nThe coffee machine has:\n%d ml of water\n%d ml of milk\n%d g of coffee beans\n%d disposable cups\n$%d\n", inv1.water, inv1.milk, inv1.beans, inv1.cups, inv1.money);
     sleep(3);
     system("cls");
 
