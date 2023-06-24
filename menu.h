@@ -5,28 +5,49 @@
 int customerMenu(void);
 int adminMenu(void);
 
+struct inventory
+{
+    int water;
+    int milk;
+    int beans;
+    int cups;
+    int money;
+};
+
 int customerMenu(void)
 {
-    int water = 400;
-    int milk = 540;
-    int beans = 120;
-    int cups = 9;
-    int money = 550;
+    FILE *finv;
+    finv = fopen("inventory.txt", "w");
+
+    struct inventory inv1;
+
+    inv1.water = 400;
+    inv1.milk = 540;
+    inv1.beans = 120;
+    inv1.cups = 9;
+    inv1.money = 550;
 
      int buy;
      if(buy != 4)
      {
-     printf("\t{] Brew & Chew [}\n\n");
+     printf(":::Brew & Chew:::\n\n");
      printf("\nWhat do you want to buy? [1-4]\n1 - Espresso [$4]\n2 - Latte [$7]\n3 - Cappuccino [$6]\n4 - Exit\n> ");
      scanf("%d", &buy);
     switch (buy) {
       case (1) : {
-        if (water>=250) {
-          if (beans>=16) {
-            water -= 250;
-            beans -= 16;
-            money += 4;
-            cups--;
+        if (inv1.water>=250) {
+          if (inv1.beans>=16) {
+            inv1.water -= 250;
+            inv1.beans -= 16;
+            inv1.money += 4;
+            inv1.cups--;
+
+            fwrite(&inv1, sizeof(struct inventory), 1, finv);
+
+            system("cls");
+
+            fclose(finv);
+
             printf("\nHave enough resources, making you a coffee!.");
             sleep(1);
             printf(".");
@@ -46,23 +67,29 @@ int customerMenu(void)
       }
 
       case (2) : {
-        if (water>=350) {
-          if (milk>=75) {
-            if (beans>=20) {
-              water -= 350;
-              milk -= 75;
-              beans -= 20;
-              money += 7;
-              cups--;
-              printf("\nHave enough resources, making you a coffee!.");
-            sleep(1);
-            printf(".");
-            sleep(1);
-            printf(".");
-            sleep(1);
-            system("cls");
-            printf("Here is your coffee.\nThank you! Have a nice day!\n\n");
+        if (inv1.water>=350) {
+          if (inv1.milk>=75) {
+            if (inv1.beans>=20) {
+              inv1.water -= 350;
+              inv1.milk -= 75;
+              inv1.beans -= 20;
+              inv1.money += 7;
+              inv1.cups--;
 
+              fwrite(&inv1, sizeof(struct inventory), 1, finv);
+
+              system("cls");
+
+              fclose(finv);
+
+              printf("\nHave enough resources, making you a coffee!.");
+              sleep(1);
+              printf(".");
+              sleep(1);
+              printf(".");
+              sleep(1);
+              system("cls");
+              printf("Here is your coffee.\nThank you! Have a nice day!\n\n");
             } else {
               printf("\nSorry, not enough coffee beans! Please call a member of admin team. Sorry for the inconvenience.\n");
             }
@@ -77,22 +104,29 @@ int customerMenu(void)
       }
 
       case (3) : {
-        if (water>=200) {
-          if (milk>=100) {
-            if (beans>=12) {
-              water -= 200;
-              milk -= 100;
-              beans -= 12;
-              money += 6;
-              cups--;
+        if (inv1.water>=200) {
+          if (inv1.milk>=100) {
+            if (inv1.beans>=12) {
+              inv1.water -= 200;
+              inv1.milk -= 100;
+              inv1.beans -= 12;
+              inv1.money += 6;
+              inv1.cups--;
+
+              fwrite(&inv1, sizeof(struct inventory), 1, finv);
+
+              system("cls");
+
+              fclose(finv);
+
               printf("\nHave enough resources, making you a coffee!.");
-            sleep(1);
-            printf(".");
-            sleep(1);
-            printf(".");
-            sleep(1);
-            system("cls");
-            printf("Here is your coffee.\nThank you! Have a nice day!\n\n");
+              sleep(1);
+              printf(".");
+              sleep(1);
+              printf(".");
+              sleep(1);
+              system("cls");
+              printf("Here is your coffee.\nThank you! Have a nice day!\n\n");
 
             } else {
               printf("\nSorry, not enough coffee beans! Please call a member of admin team. Sorry for the inconvenience.\n");
@@ -122,24 +156,29 @@ int customerMenu(void)
 
 int adminMenu(void)
 {
+    FILE *finv;
+    finv = fopen("inventory.txt", "w");
+
+    struct inventory inv1;
+
     int input;
     int action = 0;
-    int water = 400;
-    int milk = 540;
-    int beans = 120;
-    int cups = 9;
-    int money = 550;
+    inv1.water = 400;
+    inv1.milk = 540;
+    inv1.beans = 120;
+    inv1.cups = 9;
+    inv1.money = 550;
 
     while (action != 4) {
-        printf("\t{] Brew & Chew [}\n\n");
+        printf(":::Brew & Chew:::\n\n");
         printf("\nWrite action [1-4]\n1 - Fill\n2 - Take\n3 - Remaining\n4 - Exit\n> ");
         scanf("%d", &input);
         system("cls");
         action = input;
 
   if (action == 3) {
-    printf("\nThe coffee machine has:\n%d ml of water\n%d ml of milk\n%d g of coffee beans\n%d disposable cups\n%d taka\n", water, milk, beans, cups, money);
-    sleep(5);
+    printf("\nThe coffee machine has:\n%d ml of water\n%d ml of milk\n%d g of coffee beans\n%d disposable cups\n%d taka\n", inv1.water, inv1.milk, inv1.beans, inv1.cups, inv1.money);
+    sleep(3);
     system("cls");
 
   }
@@ -158,10 +197,16 @@ int adminMenu(void)
     printf("Write how many disposable coffee cups you want to add:\n");
     scanf("%d", &cups1);
 
-    water += water1;
-    milk += milk1;
-    beans += beans1;
-    cups += cups1;
+    inv1.water += water1;
+    inv1.milk += milk1;
+    inv1.beans += beans1;
+    inv1.cups += cups1;
+
+    fwrite(&inv1, sizeof(struct inventory), 1, finv);
+
+    system("cls");
+
+    fclose(finv);
 
     printf("Adding, please standby.");
     sleep(1);
@@ -169,17 +214,20 @@ int adminMenu(void)
     sleep(1);
     printf(".");
     sleep(1);
-    printf("Done!\n");
+    printf(" Done!\n");
     sleep(1);
     system("cls");
 
   }
 
   if (action == 2) {
-    printf("\n$%d withdrawn\n", money);
+    printf("\n$%d withdrawn\n", inv1.money);
     sleep(2);
-    money = 0;
+    inv1.money = 0;
+
+    fwrite(&inv1, sizeof(struct inventory), 1, finv);
     system("cls");
+    fclose(finv);
   }
 
   if (action == 4) {
